@@ -1,4 +1,6 @@
-const ListComponent = () => {
+import  { useState } from 'react';
+
+const PokemonCard = () => {
     const [count, setCount] = useState(0);
     return (
         <div>
@@ -9,4 +11,4 @@ const ListComponent = () => {
         </div>
     );
 }
-export  {ListComponent};
+export  {PokemonCard};

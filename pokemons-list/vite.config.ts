@@ -6,12 +6,11 @@ export default defineConfig({
   plugins: [
     federation({
       name: 'pokemon_list',
-      // type: 'module',
       filename: 'remoteEntry.js',
       manifest: true,
       exposes: {
         './App': './src/main.tsx',
-        './ListComponent': './src/ListComponent.tsx'
+        './PokemonCard': './src/PokemonCard.tsx'
       },
       shared: ['react', 'react-dom']
     }),
@@ -19,15 +18,7 @@ export default defineConfig({
   ],
   optimizeDeps: {
     include: [], 
-    needsInterop: [
-      '@module-federation/runtime',
-      'react',
-      'react-dom',
-      'react/jsx-runtime',
-      'remoteEntry.js',
-      '__mf__virtual/pokemon_list__prebuild__react_mf_2_dom__prebuild__.js', 
-      '__mf__virtual/pokemon_list__prebuild__react__prebuild__.js'
-    ]
+
   },
   build: {
     modulePreload: false,

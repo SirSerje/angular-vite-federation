@@ -6,13 +6,10 @@ export default defineConfig({
   plugins: [
     federation({
       name: 'host',
-      // manifest: true,
       remotes: {
         pokemon_list: {
           type: 'module',
           entry: 'http://localhost:5175/remoteEntry.js',
-          entryGlobalName: './App',
-          // shareScope: 'default',
           name: 'pokemon_list'
         }
       },
@@ -47,12 +44,6 @@ export default defineConfig({
   resolve: {
   },
   optimizeDeps: {
-    needsInterop: [
-      '@module-federation/runtime',
-      'react',
-      'react-dom',
-      'react/jsx-runtime',
-      'remoteEntry.js',
-    ]
+    include: [], 
   }
 });
