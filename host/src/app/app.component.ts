@@ -27,25 +27,42 @@ export class AppComponent implements OnInit {
 
     // Dynamically import the React component from the remote app
     await import('pokemon_list/App').then((module) => {
-      console.log("mmm", module.renderApp);
+      // console.log("mmm", module.renderApp);
 
       const ReactApp = module.renderApp; // Get the default export (React component)
-      console.log("ReactApp", ReactApp);
+      // console.log("ReactApp", ReactApp);
       this.renderReactApp(ReactApp);
     }).catch(err => {
       console.error("Error loading remote React app", err);
     });
-      // Load PokemonCard
-      const cardModule = await import('pokemon_list/PokemonCard');
-      console.log("cardModule", cardModule);
-      const cardContainer = document.getElementById('pokemon-card-container');
-      if (cardContainer && cardModule.PokemonCard) {
-    
-        const root = ReactDOM.createRoot(cardContainer);
-        root.render(React.createElement(cardModule.PokemonCard));
+   // Load PokemonCard
+   const cardModule = await import('pokemon_list/PokemonCard');
+   // console.log("cardModule", cardModule);
+   const cardContainer = document.getElementById('pokemon-card-container');
+   if (cardContainer && cardModule.PokemonCard) {
+
+     const root = ReactDOM.createRoot(cardContainer);
+     root.render(React.createElement(cardModule.PokemonCard));
+
+   }
+    try {
+      //load single spa
+      const singleSpaApp = await import('single_spa_shell/SingleSpaApp');
+      console.log("cardModule", singleSpaApp);
+      const singleSpaContainer = document.getElementById('single-spa-container');
+    if (singleSpaContainer && singleSpaApp) {
+      console.log("singleSpaApp", singleSpaApp);
+
+      // const root = ReactDOM.createRoot(singleSpaApp.initSpa());
+      // root.render(React.createElement(singleSpaApp.initSpa()));
+
+    }
+    } catch (error) {
+      console.error("Error loading remote React app", error);
+    }
+
 
   }
-}
 
   public ngOnInit(): void {
     this.loadRemoteReactApp();

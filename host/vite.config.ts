@@ -11,9 +11,16 @@ export default defineConfig({
           type: 'module',
           entry: 'http://localhost:5175/remoteEntry.js',
           name: 'pokemon_list'
-        }
+        },
+        single_spa_shell: 'single_spa_shell@http://localhost:9000/remoteEntry.js',
+
+
       },
       shared: {
+        'single-spa': {
+          singleton: true,
+          requiredVersion: '^6.0.3'
+        },
         react: {
           singleton: true,
           requiredVersion: '^18.2.0'

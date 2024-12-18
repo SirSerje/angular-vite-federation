@@ -2,7 +2,7 @@
   "name": "vite-ng-app",
   "version": "17.0.11",
   "type": "module",
-  "private": true,  
+  "private": true,
   "scripts": {
     "dev": "vite --port 5174 --strictPort",
     "build": "vite build",
@@ -15,9 +15,10 @@
     "@angular/platform-browser": "^17.0.0",
     "@angular/platform-browser-dynamic": "^17.0.0",
     "@module-federation/vite": "^1.1.9",
-    "rxjs": "^7.8.1",
-     "react": "^18.2.0",
+    "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "rxjs": "^7.8.1",
+    "single-spa": "^6.0.3",
     "zone.js": "^0.14.2"
   },
   "devDependencies": {

@@ -76,6 +76,13 @@
                   type: "module",
                   entry: "http://localhost:5175/remoteEntry.js",
                 }
+          ,
+                {
+                  entryGlobalName: "single_spa_shell",
+                  name: "single_spa_shell",
+                  type: "var",
+                  entry: "http://localhost:9000/remoteEntry.js",
+                }
           
       ]
       export {
