@@ -22,6 +22,7 @@ export class AppComponent implements OnInit {
       ReactApp(container); // Render React app to the container
     }
   }
+  
   async loadRemoteReactApp() {
     console.log("loadRemoteReactApp");
 

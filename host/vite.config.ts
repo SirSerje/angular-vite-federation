@@ -12,7 +12,11 @@ export default defineConfig({
           entry: 'http://localhost:5175/remoteEntry.js',
           name: 'pokemon_list'
         },
-        single_spa_shell: 'single_spa_shell@http://localhost:9000/remoteEntry.js',
+        single_spa_shell:{
+          type: 'module',
+          entry: 'http://127.0.0.1:3000/remoteEntry.js',
+          name: 'single_spa_shell'
+        }
 
 
       },
@@ -25,6 +29,7 @@ export default defineConfig({
           singleton: true,
           requiredVersion: '^18.2.0'
         },
+        
         'react-dom': {
           singleton: true,
           requiredVersion: '^18.2.0'

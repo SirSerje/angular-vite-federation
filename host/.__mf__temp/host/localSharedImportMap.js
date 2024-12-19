@@ -80,8 +80,8 @@
                 {
                   entryGlobalName: "single_spa_shell",
                   name: "single_spa_shell",
-                  type: "var",
-                  entry: "http://localhost:9000/remoteEntry.js",
+                  type: "module",
+                  entry: "http://127.0.0.1:3000/remoteEntry.js",
                 }
           
       ]
